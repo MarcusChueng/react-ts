@@ -4,7 +4,7 @@
  * @Author: MarcusCheung
  * @Date: 2022-02-09 21:45:11
  * @LastEditors: MarcusCheung
- * @LastEditTime: 2022-02-10 00:43:20
+ * @LastEditTime: 2022-02-11 22:44:40
  */
 const fs = require("fs")
 const packageConfig = require("../../package.json")
@@ -20,4 +20,15 @@ function getVersion() {
 
 function getTestVersion() {
     return packageConfig.testVersion || "1.0.0"
+}
+
+function getEnv() {
+    return process.env.NODE_ENV || "dev"
+}
+
+module.export = {
+    readFile,
+    getVersion,
+    getTestVersion,
+    getEnv
 }
